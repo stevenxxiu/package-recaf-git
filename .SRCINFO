@@ -7,9 +7,9 @@ pkgbase = recaf-dev4-git
 	license = MIT
 	makedepends = git
 	makedepends = java-environment
-	makedepends = jdk17-openjdk
+	makedepends = jdk-openjdk
 	depends = java-runtime
-	depends = java17-openjfx
+	depends = java-openjfx-bin
 	depends = ttf-font
 	provides = recaf-4
 	source = recaf::git+https://github.com/Col-E/Recaf#branch=dev4

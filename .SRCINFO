@@ -1,6 +1,6 @@
 pkgbase = recaf-dev4-git
 	pkgdesc = A modern Java bytecode editor. dev4 (beta) branch.
-	pkgver = r3816.5945a284
+	pkgver = r4315.cb5aaab73
 	pkgrel = 1
 	url = https://github.com/Col-E/Recaf/tree/dev4
 	arch = any
@@ -13,8 +13,10 @@ pkgbase = recaf-dev4-git
 	depends = ttf-font
 	provides = recaf-4
 	source = recaf::git+https://github.com/Col-E/Recaf#branch=dev4
+	source = atlantafx::git+https://github.com/Col-E/atlantafx.git#branch=recaf-theme-2x-alt
 	source = recaf-4
 	source = recaf-4.desktop
+	sha256sums = SKIP
 	sha256sums = SKIP
 	sha256sums = 34a64f21c7b5de1435e8e111f6d4bacfa1d0d735b7dab412ad669fe1376810db
 	sha256sums = 3d89d8b9c46ef27edaddcc0d612fed3ac0537ecee6aa049fc4fb2a2bbbbdfe54

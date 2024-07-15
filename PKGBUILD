@@ -4,7 +4,7 @@
 _reponame=recaf
 _installname=recaf-4
 pkgname=${_reponame}-dev4-git
-pkgver=r4138.9653c5295
+pkgver=r4318.06f06d7ef
 pkgrel=1
 pkgdesc="A modern Java bytecode editor. dev4 (beta) branch."
 arch=("any")
@@ -14,15 +14,28 @@ depends=("java-runtime" "java-openjfx-bin" "ttf-font")
 makedepends=("git" "java-environment" "jdk-openjdk")
 provides=($_installname)
 source=("recaf::git+https://github.com/Col-E/Recaf#branch=dev4"
+        "atlantafx::git+https://github.com/Col-E/atlantafx.git#branch=recaf-theme-2x-alt"
         "recaf-4"
         "recaf-4.desktop")
 sha256sums=("SKIP"
+        "SKIP"
         "34a64f21c7b5de1435e8e111f6d4bacfa1d0d735b7dab412ad669fe1376810db"
         "3d89d8b9c46ef27edaddcc0d612fed3ac0537ecee6aa049fc4fb2a2bbbbdfe54")
 
 pkgver() {
     cd "$srcdir/$_reponame"
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    cd "$srcdir/$_reponame"
+    patch --forward --strip=1 --input="${startdir}/light-theme-recaf.patch"
+    patch --forward --strip=1 --input="${startdir}/light-theme-syntax-highlighting.patch"
+
+    cd "$srcdir/atlantafx"
+    patch --forward --strip=1 --input="${startdir}/light-theme-atlantafx.patch"
+    mvn clean install --batch-mode --file styles/pom.xml
+    cp styles/dist/recaf.css "$srcdir/$_reponame/recaf-ui/src/main/resources/style/"
 }
 
 build() {

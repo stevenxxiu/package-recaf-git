@@ -1,0 +1,142 @@
+From 64a0da50522f2078d2954f81ae4bdf6d9f3c1457 Mon Sep 17 00:00:00 2001
+From: Steven Xu <stevenxxiu@gmail.com>
+Date: Thu, 18 Jul 2024 02:14:57 +1000
+Subject: [PATCH 1/1] feat: change syntax highlighting colors to *Catppuccin
+ Latte*
+
+Keep the *Javadoc* colors, as *Catppuccin Latte* doesn't have special colors for these.
+---
+ recaf-ui/src/main/resources/syntax/enigma.css |  6 +++---
+ recaf-ui/src/main/resources/syntax/jasm.css   | 10 +++++-----
+ recaf-ui/src/main/resources/syntax/java.css   | 14 +++++++-------
+ recaf-ui/src/main/resources/syntax/json.css   |  6 +++---
+ recaf-ui/src/main/resources/syntax/xml.css    | 10 +++++-----
+ 5 files changed, 23 insertions(+), 23 deletions(-)
+
+diff --git a/recaf-ui/src/main/resources/syntax/enigma.css b/recaf-ui/src/main/resources/syntax/enigma.css
+index 5c1d3c4..c144111 100644
+--- a/recaf-ui/src/main/resources/syntax/enigma.css
++++ b/recaf-ui/src/main/resources/syntax/enigma.css
+@@ -1,7 +1,7 @@
+ .code-area .keyword {
+-    -fx-fill: rgb(0, 175, 255);
++    -fx-fill: rgb(136, 57, 239);
+ }
+ 
+ .code-area .comment {
+-	-fx-fill: rgb(175, 175, 215);
+-}
+\ No newline at end of file
++	-fx-fill: rgb(156, 160, 176);
++}
+diff --git a/recaf-ui/src/main/resources/syntax/jasm.css b/recaf-ui/src/main/resources/syntax/jasm.css
+index 2bc6810..a4169a3 100644
+--- a/recaf-ui/src/main/resources/syntax/jasm.css
++++ b/recaf-ui/src/main/resources/syntax/jasm.css
+@@ -1,15 +1,15 @@
+ .code-area .keyword {
+-    -fx-fill: rgb(0, 175, 255);
++    -fx-fill: rgb(136, 57, 239);
+ }
+ 
+ .code-area .string {
+-    -fx-fill: rgb(175, 215, 223);
++    -fx-fill: rgb(64, 160, 43);
+ }
+ 
+ .code-area .constant {
+-	-fx-fill: rgb(125, 215, 215);
++	-fx-fill: rgb(254, 100, 11);
+ }
+ 
+ .code-area .comment-line {
+-	-fx-fill: rgb(175, 175, 215);
+-}
+\ No newline at end of file
++	-fx-fill: rgb(156, 160, 176);
++}
+diff --git a/recaf-ui/src/main/resources/syntax/java.css b/recaf-ui/src/main/resources/syntax/java.css
+index f737c03..af6e609 100644
+--- a/recaf-ui/src/main/resources/syntax/java.css
++++ b/recaf-ui/src/main/resources/syntax/java.css
+@@ -1,17 +1,17 @@
+ .code-area .keyword {
+-    -fx-fill: rgb(0, 175, 255);
++    -fx-fill: rgb(136, 57, 239);
+ }
+ 
+ .code-area .string {
+-    -fx-fill: rgb(175, 215, 223);
++    -fx-fill: rgb(64, 160, 43);
+ }
+ 
+ .code-area .constant {
+-	-fx-fill: rgb(125, 215, 215);
++	-fx-fill: rgb(254, 100, 11);
+ }
+ 
+ .code-area .annotation {
+-    -fx-fill: rgb(0, 215, 215);
++    -fx-fill: rgb(254, 100, 11);
+ }
+ 
+ .code-area .comment-javadoc {
+@@ -31,9 +31,9 @@ .code-area .comment-javadoc-name {
+ }
+ 
+ .code-area .comment-multi {
+-	-fx-fill: rgb(155, 155, 215);
++	-fx-fill: rgb(156, 160, 176);
+ }
+ 
+ .code-area .comment-line {
+-	-fx-fill: rgb(175, 175, 215);
+-}
+\ No newline at end of file
++	-fx-fill: rgb(156, 160, 176);
++}
+diff --git a/recaf-ui/src/main/resources/syntax/json.css b/recaf-ui/src/main/resources/syntax/json.css
+index ee2662b..4503a15 100644
+--- a/recaf-ui/src/main/resources/syntax/json.css
++++ b/recaf-ui/src/main/resources/syntax/json.css
+@@ -1,7 +1,7 @@
+ .code-area .string {
+-    -fx-fill: rgb(175, 215, 223);
++    -fx-fill: rgb(64, 160, 43);
+ }
+ 
+ .code-area .constant {
+-    -fx-fill: rgb(125, 215, 215);
+-}
+\ No newline at end of file
++    -fx-fill: rgb(254, 100, 11);
++}
+diff --git a/recaf-ui/src/main/resources/syntax/xml.css b/recaf-ui/src/main/resources/syntax/xml.css
+index 1a36c72..7b091ad 100644
+--- a/recaf-ui/src/main/resources/syntax/xml.css
++++ b/recaf-ui/src/main/resources/syntax/xml.css
+@@ -1,15 +1,15 @@
+ .code-area .tag-name {
+-    -fx-fill: rgb(90, 160, 220);
++    -fx-fill: rgb(136, 57, 239);
+ }
+ 
+ .code-area .tag-param {
+-    -fx-fill: rgb(140, 190, 220);
++    -fx-fill: rgb(23, 146, 153);
+ }
+ 
+ .code-area .comment-multi {
+-	-fx-fill: rgb(120, 120, 120);
++	-fx-fill: rgb(156, 160, 176);
+ }
+ 
+ .code-area .string {
+-    -fx-fill: rgb(150, 200, 105);
+-}
+\ No newline at end of file
++    -fx-fill: rgb(64, 160, 43);
++}
+-- 
+2.45.2
+

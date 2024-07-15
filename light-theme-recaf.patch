@@ -1,0 +1,89 @@
+From 88092533a7f900d3cb64ba2c12a94ce4407c9693 Mon Sep 17 00:00:00 2001
+From: Steven Xu <stevenxxiu@gmail.com>
+Date: Tue, 16 Jul 2024 00:37:43 +1000
+Subject: [PATCH 1/1] feat: change to light theme
+
+---
+ recaf-ui/src/main/resources/style/code-editor.css | 10 +++++-----
+ recaf-ui/src/main/resources/style/tweaks.css      |  9 ++++++---
+ 2 files changed, 11 insertions(+), 8 deletions(-)
+
+diff --git a/recaf-ui/src/main/resources/style/code-editor.css b/recaf-ui/src/main/resources/style/code-editor.css
+index 1aacc29..42f8302 100644
+--- a/recaf-ui/src/main/resources/style/code-editor.css
++++ b/recaf-ui/src/main/resources/style/code-editor.css
+@@ -25,11 +25,11 @@ @font-face {
+ 
+ .code-area {
+ 	-fx-background-color: -color-bg-default;
+-	-fx-accent: -color-accent-7;
++	-fx-accent: -color-accent-9;
+     -fx-cursor: text;
+ }
+ .code-area .text {
+-    -fx-fill: -color-base-3;
++    -fx-fill: -color-base-7;
+     -fx-font-family: 'JetBrains Mono';
+     -fx-font-size: 12px;
+ }
+@@ -43,7 +43,7 @@ .code-area .paragraph-box {
+     -fx-padding: -0.5 0 -0.5 0;
+ }
+ .code-area .paragraph-box:has-caret {
+-    -fx-background-color: -color-base-8;
++    -fx-background-color: -color-base-1;
+ }
+ .code-area .paragraph-box .paragraph-text {
+     -fx-line-spacing: 1;
+@@ -63,7 +63,7 @@ .code-area .caret {
+ Style for handling selection color.
+ */
+ .code-area .main-selection {
+-    -fx-fill: -color-accent-6;
++    -fx-fill: -color-accent-1;
+ }
+ 
+ /*
+@@ -103,4 +103,4 @@ .code-area .matched-brace-line .line {
+     -fx-border-color: transparent transparent transparent -color-accent-3;
+     -fx-border-width: 0 0 0 2px;
+     -fx-pref-width: 1;
+-}
+\ No newline at end of file
++}
+diff --git a/recaf-ui/src/main/resources/style/tweaks.css b/recaf-ui/src/main/resources/style/tweaks.css
+index 0a4aade..dac9d87 100644
+--- a/recaf-ui/src/main/resources/style/tweaks.css
++++ b/recaf-ui/src/main/resources/style/tweaks.css
+@@ -99,8 +99,11 @@ .tab-pane.floating > .tab-header-area {
+     -fx-background-color: -color-border-muted, -color-bg-inset;
+     -fx-background-insets: 0, 0 0 1px 0;
+ }
++.tab-pane > .tab-header-area > .headers-region > .tab:selected {
++    -fx-background-color: -color-accent-1, -color-base-1;
++}
+ .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected {
+-    -fx-background-color: -color-accent-4, -color-base-9;
++    -fx-background-color: -color-accent-4, -color-base-4;
+     -fx-background-insets: 0, 0 0 2px 0;
+ }
+ 
+@@ -138,7 +141,7 @@ .side-tab {
+ .side-tab:hover,
+ .side-tab:selected,
+ .side-tab:focused {
+-    -fx-background-color: -color-base-8;
++    -fx-background-color: -color-base-3;
+ }
+ 
+ /* Used at top of editor control */
+@@ -187,4 +190,4 @@ .borderless {
+ .graphic-button {
+     -fx-border-width: 0px;
+     -fx-background-radius: 5px;
+-}
+\ No newline at end of file
++}
+-- 
+2.45.2
+

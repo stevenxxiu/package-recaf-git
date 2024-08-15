@@ -1,11 +1,12 @@
 [Desktop Entry]
 Type=Application
 Version=4.0.0-SNAPSHOT
-Name=Recaf 4
+Name=Recaf
 Comment=%s
 Path=/usr/bin
-Exec=recaf-4
-Icon=recaf-4
+Exec=recaf
+Icon=recaf
 Terminal=false
 MimeType=application/java-archive
 Categories=Development;Java
+Name[en_AU]=recaf.desktop

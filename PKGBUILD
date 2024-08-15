@@ -1,26 +1,23 @@
-# Maintainer: Nixuge
-# If/When recaf 4 becomes the main release, this package will be removed/archived.
-
 _reponame=recaf
-_installname=recaf-4
-pkgname=${_reponame}-dev4-git
-pkgver=r4318.06f06d7ef
+_installname=recaf
+pkgname=${_reponame}-git
+pkgver=r4343.3b1e287d2
 pkgrel=1
-pkgdesc="A modern Java bytecode editor. dev4 (beta) branch."
+pkgdesc="A modern Java bytecode editor."
 arch=("any")
-url="https://github.com/Col-E/Recaf/tree/dev4"
+url="https://github.com/Col-E/Recaf/tree/master"
 license=("MIT")
 depends=("java-runtime" "java-openjfx-bin" "ttf-font")
 makedepends=("git" "java-environment" "jdk-openjdk")
 provides=($_installname)
-source=("recaf::git+https://github.com/Col-E/Recaf#branch=dev4"
+source=("recaf::git+https://github.com/Col-E/Recaf"
         "atlantafx::git+https://github.com/Col-E/atlantafx.git#branch=recaf-theme-2x-alt"
-        "recaf-4"
-        "recaf-4.desktop")
-sha256sums=("SKIP"
-        "SKIP"
-        "34a64f21c7b5de1435e8e111f6d4bacfa1d0d735b7dab412ad669fe1376810db"
-        "3d89d8b9c46ef27edaddcc0d612fed3ac0537ecee6aa049fc4fb2a2bbbbdfe54")
+        "recaf-wrapper"
+        "recaf.desktop")
+sha256sums=('SKIP'
+            'SKIP'
+            '8611012fed174565ea32c1979f7a627a879721a5f089dc1122ce707dd9c4a068'
+            'b932bc9c97ab892c0ee40899a40795176c75bf186d7627e68ae5086ccbf3047d')
 
 pkgver() {
     cd "$srcdir/$_reponame"
@@ -52,9 +49,9 @@ package() {
             "recaf-ui/build/libs/recaf-ui-4.0.0-SNAPSHOT-all.jar" \
             "$pkgdir/usr/share/java/$_installname/$_installname.jar"
 
-    install -Dm644 "recaf-ui/src/main/resources/icons/logo.png" "$pkgdir/usr/share/pixmaps/recaf-4.png"
-    install -Dm644 "$srcdir/recaf-4.desktop" "$pkgdir/usr/share/applications/recaf-4.desktop"
+    install -Dm644 "recaf-ui/src/main/resources/icons/logo.png" "$pkgdir/usr/share/pixmaps/recaf.png"
+    install -Dm644 "$srcdir/recaf.desktop" "$pkgdir/usr/share/applications/recaf.desktop"
 
 
-    install -Dm755 "$srcdir/recaf-4" "$pkgdir/usr/bin/recaf-4"
+    install -Dm755 "$srcdir/recaf-wrapper" "$pkgdir/usr/bin/recaf"
 }

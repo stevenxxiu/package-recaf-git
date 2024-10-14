@@ -1,0 +1,32 @@
+diff --git a/build.gradle b/build.gradle
+index af978ba29..0e3a43af2 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -51,7 +51,6 @@
+     // gradlew -q javaToolchains - see the list of detected toolchains.
+     java {
+         toolchain {
+-            languageVersion = JavaLanguageVersion.of(22)
+         }
+     }
+ 
+@@ -136,8 +135,6 @@
+ tasks.register('test') {
+     dependsOn(subprojects.test)
+     doLast {
+-        if (subprojects.test.stream().anyMatch(Task::getDidWork))
+-            buildJacocoAggregate.execute()
+     }
+ }
+ 
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+index 19cfad969..1e2fbf0d4 100644
+--- a/gradle/wrapper/gradle-wrapper.properties
++++ b/gradle/wrapper/gradle-wrapper.properties
+@@ -1,5 +1,5 @@
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-8.9-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.10.2-bin.zip
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists

@@ -1,7 +1,7 @@
 _reponame=recaf
 _installname=recaf
 pkgname=${_reponame}-git
-pkgver=r4343.3b1e287d2
+pkgver=r4414.d5898f5d1
 pkgrel=1
 pkgdesc="A modern Java bytecode editor."
 arch=("any")
@@ -28,6 +28,9 @@ prepare() {
     cd "$srcdir/$_reponame"
     patch --forward --strip=1 --input="${startdir}/light-theme-recaf.patch"
     patch --forward --strip=1 --input="${startdir}/light-theme-syntax-highlighting.patch"
+
+    patch --forward --strip=1 --input="${startdir}/gradle.patch"
+    patch --forward --strip=1 --input="${startdir}/ignore_JavacCompilerTest.patch"
 
     cd "$srcdir/atlantafx"
     patch --forward --strip=1 --input="${startdir}/light-theme-atlantafx.patch"

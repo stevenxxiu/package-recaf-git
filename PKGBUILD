@@ -1,13 +1,13 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r4408.ac6e07cba
+pkgver=r4448.02ba1332c
 pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")
 url="https://github.com/Col-E/Recaf"
 license=("MIT")
-depends=("java-environment-openjdk=22" "ttf-font")
+depends=("java-environment-openjdk>=22" "ttf-font")
 makedepends=("git" "jdk22-openjdk")
 provides=("$_pkgname")
 conflicts=("$_pkgname" "$_pkgname-bin")

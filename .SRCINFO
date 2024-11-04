@@ -6,8 +6,10 @@ pkgbase = recaf-git
 	arch = any
 	license = MIT
 	makedepends = git
-	makedepends = jdk22-openjdk
-	depends = java-environment-openjdk=22
+	makedepends = java-environment
+	makedepends = jdk-openjdk
+	depends = java-runtime
+	depends = java-openjfx-bin
 	depends = ttf-font
 	provides = recaf
 	conflicts = recaf

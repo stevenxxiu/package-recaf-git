@@ -49,7 +49,19 @@ package() {
   install -Dm755 "recaf-ui/build/libs/recaf-ui-"*"-all.jar" "$pkgdir/usr/share/java/$_pkgname/$_pkgname.jar"
   install -Dm644 "recaf-ui/src/main/resources/icons/logo-full.png" "$pkgdir/usr/share/pixmaps/recaf.png"
   printf '#!/usr/bin/env bash\nexec java -jar "/usr/share/java/%s/%s.jar" "$@"' "$_pkgname" "$_pkgname" > "recaf"
-  printf "[Desktop Entry]\nType=Application\nVersion=1.0\nName=Recaf\nComment=%s\nPath=/usr/bin\nExec=sh -c 'if [ -n \"\$0\" ]; then recaf --input=\"\$0\"; else recaf; fi' %%u\nIcon=recaf\nTerminal=false\nMimeType=application/java-archive\nCategories=Development;Java" "$pkgdesc" > "recaf.desktop"
+  printf \
+"[Desktop Entry]\n"\
+"Type=Application\n"\
+"Version=1.0\n"\
+"Name=Recaf\n"\
+"Comment=%s\n"\
+"Path=/usr/bin\n"\
+"Exec=sh -c \\\"if [ -n \"\$0\" ]; then recaf --input=\"\$0\"; else recaf; fi\\\" %%u"\
+"Icon=recaf\n"\
+"Terminal=false\n"\
+"MimeType=application/java-archive\n"\
+"Categories=Development;Java"\
+"$pkgdesc" > "recaf.desktop"
   install -Dm755 "recaf" "$pkgdir/usr/bin/recaf"
   install -Dm644 "recaf.desktop" "$pkgdir/usr/share/applications/recaf.desktop"
 }

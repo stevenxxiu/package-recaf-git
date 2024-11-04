@@ -12,8 +12,10 @@ makedepends=("git" "java-environment" "jdk-openjdk")
 provides=("$_pkgname")
 conflicts=("$_pkgname" "$_pkgname-bin")
 replaces=("recaf")
-source=("recaf::git+https://github.com/Col-E/Recaf#branch=master")
-md5sums=("SKIP")
+source=("recaf::git+https://github.com/Col-E/Recaf#branch=master"
+        "atlantafx::git+https://github.com/Col-E/atlantafx.git#branch=recaf-theme-2x-alt")
+md5sums=("SKIP"
+         "SKIP")
 
 pkgver() {
   cd "$srcdir/$_pkgname"
@@ -25,6 +27,14 @@ prepare() {
 
   patch --forward --strip=1 --input="${startdir}/gradle.patch"
   patch --forward --strip=1 --input="${startdir}/ignore_JavacCompilerTest.patch"
+
+  patch --forward --strip=1 --input="${startdir}/light-theme-recaf.patch"
+  patch --forward --strip=1 --input="${startdir}/light-theme-syntax-highlighting.patch"
+
+  cd "$srcdir/atlantafx"
+  patch --forward --strip=1 --input="${startdir}/light-theme-atlantafx.patch"
+  mvn clean install --batch-mode --file styles/pom.xml
+  cp styles/dist/recaf.css "$srcdir/$_pkgname/recaf-ui/src/main/resources/style/"
 }
 
 build() {

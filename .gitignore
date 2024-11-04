@@ -1,4 +1,5 @@
-/pkg
-/recaf
-/src
-/recaf-*.pkg.*
+/pkg/
+/src/
+/atlantafx/
+/recaf/
+/recaf-*.zst

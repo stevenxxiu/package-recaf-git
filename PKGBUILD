@@ -1,7 +1,7 @@
 _reponame=recaf
 _installname=recaf
 pkgname=${_reponame}-git
-pkgver=r4414.d5898f5d1
+pkgver=r4448.02ba1332c
 pkgrel=1
 pkgdesc="A modern Java bytecode editor."
 arch=("any")

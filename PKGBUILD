@@ -1,7 +1,7 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r4478.4ab601528
+pkgver=r4659.60a6b8edb
 pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")
@@ -31,7 +31,22 @@ prepare() {
   patch --forward --strip=1 --input="${startdir}/light-theme-syntax-highlighting.patch"
 
   cd "$srcdir/atlantafx"
+
   patch --forward --strip=1 --input="${startdir}/light-theme-atlantafx.patch"
+
+  hebi_path="$srcdir/$_pkgname/.hebi"
+  pom_paths=(
+    "pom.xml"
+    "base/pom.xml"
+    "sampler/pom.xml"
+    "styles/pom.xml"
+  )
+  for pom_path in "${pom_paths[@]}"; do
+    sed --in-place --regexp-extended \
+      "s@^(\s*)(<sassVersion>[^<]+</sassVersion>)@\1<downloadDirectory>${hebi_path}</downloadDirectory>\n\1\2@g" \
+      $pom_path
+  done
+
   mvn clean install --batch-mode --file styles/pom.xml
   cp styles/dist/recaf.css "$srcdir/$_pkgname/recaf-ui/src/main/resources/style/"
 }

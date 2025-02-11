@@ -1,7 +1,7 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r4659.60a6b8edb
+pkgver=r4661.aaf806f85
 pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")
@@ -23,6 +23,8 @@ pkgver() {
 }
 
 prepare() {
+  export MAVEN_OPTS=-Dmaven.repo.local="${startdir}/maven"
+
   cd "$srcdir/$_pkgname"
 
   patch --forward --strip=1 --input="${startdir}/gradle.patch"

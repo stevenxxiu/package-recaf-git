@@ -1,8 +1,8 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r4661.aaf806f85
-pkgrel=2
+pkgver=r4712.a66697a63
+pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")
 url="https://github.com/Col-E/Recaf"
@@ -25,7 +25,10 @@ pkgver() {
 }
 
 prepare() {
-  export MAVEN_OPTS=-Dmaven.repo.local="${startdir}/maven"
+  export MAVEN_OPTS=""
+  MAVEN_OPTS+="-Dmaven.repo.local=${startdir}/maven "
+  MAVEN_OPTS+="-Daether.dependencyCollector.impl=bf "
+  MAVEN_OPTS+="-Dmaven.artifact.threads=16"
 
   cd "$srcdir/$_pkgname"
 

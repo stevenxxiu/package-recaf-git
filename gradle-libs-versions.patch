@@ -1,0 +1,20 @@
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+index b93e83a0c..ce13250ec 100644
+--- a/gradle/libs.versions.toml
++++ b/gradle/libs.versions.toml
+@@ -24,7 +24,7 @@ jasm = "2c77df2fdd"
+ jlinker = "1.0.7"
+ jphantom = "1.4.4"
+ junit = "5.11.4"
+-jsvg = "1.6.1"
++jsvg = "2.0.0"
+ lljzip = "2.7.2"
+ logback-classic = { strictly = "1.4.11" } # newer releases break in jar releases
+ mapping-io = "0.7.0"
+@@ -165,4 +165,4 @@ gradle-coverage-report-aggregator = { id = "gov.tak.gradle.plugins.coverage-repo
+ gradle-checker-processor = { id = "gov.tak.gradle.plugins.checker-processor", version.ref = "gradle-checker-processor" }
+ javafx = { id = "org.openjfx.javafxplugin", version.ref = "javafx-plugin" }
+ shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+-peterabeles-gversion = { id = "com.peterabeles.gversion", version.ref = "peterabeles-gversion" }
+\ No newline at end of file
++peterabeles-gversion = { id = "com.peterabeles.gversion", version.ref = "peterabeles-gversion" }

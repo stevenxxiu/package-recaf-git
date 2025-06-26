@@ -1,7 +1,7 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r4804.b6a3274ac
+pkgver=r4859.0d56ab6ac
 pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")
@@ -13,10 +13,8 @@ provides=("$_pkgname")
 conflicts=("$_pkgname" "$_pkgname-bin")
 replaces=("recaf")
 source=("recaf::git+https://github.com/Col-E/Recaf#branch=master"
-        "tiwulfx-dock::git+https://github.com/Col-E/tiwulfx-dock.git#branch=staging"
         "atlantafx::git+https://github.com/Col-E/atlantafx.git#branch=recaf-theme-2x-alt")
 md5sums=("SKIP"
-         "SKIP"
          "SKIP")
 
 pkgver() {
@@ -35,18 +33,10 @@ prepare() {
   patch --forward --strip=1 --input="${startdir}/gradle.patch"
   patch --forward --strip=1 --input="${startdir}/gradle-wrapper.patch"
   patch --forward --strip=1 --input="${startdir}/gradle-libs-versions.patch"
-  patch --forward --strip=1 --input="${startdir}/gradle-tiwulfx-dock-no-animation.patch"
   patch --forward --strip=1 --input="${startdir}/util-java.patch"
 
   patch --forward --strip=1 --input="${startdir}/light-theme-recaf.patch"
   patch --forward --strip=1 --input="${startdir}/light-theme-syntax-highlighting.patch"
-
-  cd "$srcdir/tiwulfx-dock"
-
-  patch --forward --strip=1 --input="${startdir}/tiwulfx-dock-no-animation.patch"
-
-  mvn clean install
-  cp target/tiwulfx-dock-*.jar "$srcdir/$_pkgname/libs/"
 
   cd "$srcdir/atlantafx"
 

@@ -1,12 +1,11 @@
-From 88092533a7f900d3cb64ba2c12a94ce4407c9693 Mon Sep 17 00:00:00 2001
+From b6bef1626cb21d83866f401550a6de99e7de1d96 Mon Sep 17 00:00:00 2001
 From: Steven Xu <stevenxxiu@gmail.com>
 Date: Tue, 16 Jul 2024 00:37:43 +1000
-Subject: [PATCH 1/1] feat: change to light theme
+Subject: [PATCH 1/2] feat: change to light theme
 
 ---
  recaf-ui/src/main/resources/style/code-editor.css | 10 +++++-----
- recaf-ui/src/main/resources/style/tweaks.css      |  9 ++++++---
- 2 files changed, 11 insertions(+), 8 deletions(-)
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/recaf-ui/src/main/resources/style/code-editor.css b/recaf-ui/src/main/resources/style/code-editor.css
 index 1aacc29..42f8302 100644
@@ -51,39 +50,6 @@ index 1aacc29..42f8302 100644
 -}
 \ No newline at end of file
 +}
-diff --git a/recaf-ui/src/main/resources/style/tweaks.css b/recaf-ui/src/main/resources/style/tweaks.css
-index 0a4aade..dac9d87 100644
---- a/recaf-ui/src/main/resources/style/tweaks.css
-+++ b/recaf-ui/src/main/resources/style/tweaks.css
-@@ -99,8 +99,11 @@ .tab-pane.floating > .tab-header-area {
-     -fx-background-color: -color-border-muted, -color-bg-inset;
-     -fx-background-insets: 0, 0 0 1px 0;
- }
-+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
-+    -fx-background-color: -color-accent-1, -color-base-1;
-+}
- .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected {
--    -fx-background-color: -color-accent-4, -color-base-9;
-+    -fx-background-color: -color-accent-4, -color-base-4;
-     -fx-background-insets: 0, 0 0 2px 0;
- }
- 
-@@ -138,7 +141,7 @@ .side-tab {
- .side-tab:hover,
- .side-tab:selected,
- .side-tab:focused {
--    -fx-background-color: -color-base-8;
-+    -fx-background-color: -color-base-3;
- }
- 
- /* Used at top of editor control */
-@@ -187,4 +190,4 @@ .borderless {
- .graphic-button {
-     -fx-border-width: 0px;
-     -fx-background-radius: 5px;
--}
-\ No newline at end of file
-+}
 -- 
-2.45.2
+2.50.0
 

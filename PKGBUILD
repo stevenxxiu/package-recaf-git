@@ -78,7 +78,7 @@ package() {
 "Name=Recaf\n"\
 "Comment=%s\n"\
 "Path=/usr/bin\n"\
-"Exec=sh -c \\\"if [ -n \"\$0\" ]; then recaf --input=\"\$0\"; else recaf; fi\\\" %%u"\
+"Exec=sh -c \\\"if [ -n \"\$0\" ]; then recaf --input=\"\$0\"; else recaf; fi\\\" %%u\n"\
 "Icon=recaf\n"\
 "Terminal=false\n"\
 "MimeType=application/java-archive\n"\

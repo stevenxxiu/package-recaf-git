@@ -1,7 +1,7 @@
-From 64a0da50522f2078d2954f81ae4bdf6d9f3c1457 Mon Sep 17 00:00:00 2001
+From 46149d244da8a585b65703dc6f7a32091a88111c Mon Sep 17 00:00:00 2001
 From: Steven Xu <stevenxxiu@gmail.com>
 Date: Thu, 18 Jul 2024 02:14:57 +1000
-Subject: [PATCH 1/1] feat: change syntax highlighting colors to *Catppuccin
+Subject: [PATCH 2/2] feat: change syntax highlighting colors to *Catppuccin
  Latte*
 
 Keep the *Javadoc* colors, as *Catppuccin Latte* doesn't have special colors for these.
@@ -138,5 +138,5 @@ index 1a36c72..7b091ad 100644
 +    -fx-fill: rgb(64, 160, 43);
 +}
 -- 
-2.45.2
+2.50.0
 

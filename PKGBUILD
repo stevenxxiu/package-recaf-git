@@ -1,7 +1,7 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r4859.0d56ab6ac
+pkgver=r4869.e2385e56a
 pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")

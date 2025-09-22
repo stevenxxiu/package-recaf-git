@@ -1,4 +1,4 @@
-From 37a52a0614c73a7c663f773d482c0baa716f6929 Mon Sep 17 00:00:00 2001
+From 2a531fdabdc59bca7523044ce3d64bf86d0b2d5e Mon Sep 17 00:00:00 2001
 From: Steven Xu <stevenxxiu@gmail.com>
 Date: Tue, 16 Jul 2024 00:37:43 +1000
 Subject: [PATCH 1/2] feat: change to light theme
@@ -50,5 +50,5 @@ index 05d111d..51d694c 100644
 \ No newline at end of file
 +}
 -- 
-2.50.0
+2.51.0
 

@@ -1,7 +1,7 @@
 From 03da43246be563fc00ad2ad7eaf75848d5319c9b Mon Sep 17 00:00:00 2001
 From: Steven Xu <stevenxxiu@gmail.com>
 Date: Wed, 10 Jul 2024 03:19:38 +1000
-Subject: [PATCH 1/1] feat: change to light theme
+Subject: [PATCH] feat: change to light theme
 
 ---
  styles/src/recaf.scss | 63 ++++++++++++++++++++++++-------------------
@@ -151,5 +151,5 @@ index 5edf79d..1aebbbf 100644
  
  @forward "components/toggle-button" as toggle-button-* with (
 -- 
-2.45.2
+2.51.0
 

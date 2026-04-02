@@ -1,0 +1,13 @@
+diff --git a/build.gradle b/build.gradle
+index 36c722858..296ce7c45 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -77,6 +69,8 @@ implmentation fileTree(dir: "$rootProject.projectDir/libs", include: ['*.jar'])
+ 
+     // All modules should have the same test framework setup.
+     test {
++        exclude 'software/coley/recaf/**/*.class'
++
+         useJUnitPlatform()
+ 
+         // Required for Mockito in newer JDK's which disable useful features by default for 'integrity' reasons.

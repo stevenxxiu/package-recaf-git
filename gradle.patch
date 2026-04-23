@@ -1,11 +1,11 @@
 diff --git a/build.gradle b/build.gradle
-index 9efb806a2..488b59afd 100644
+index 36c722858..e5800e37c 100644
 --- a/build.gradle
 +++ b/build.gradle
-@@ -50,14 +50,6 @@ implementation fileTree(dir: "$rootProject.projectDir/libs", include: ['*.jar'])
- 
+@@ -53,14 +53,6 @@ implementation fileTree(dir: "$rootProject.projectDir/libs", include: ['*.jar'])
+
      // ========================== COMPILE ==========================
- 
+
 -    // https://docs.gradle.org/current/userguide/toolchains.html
 -    // gradlew -q javaToolchains - see the list of detected toolchains.
 -    java {
@@ -17,3 +17,14 @@ index 9efb806a2..488b59afd 100644
      // Append options for unchecked/deprecation
      tasks.withType(JavaCompile).configureEach {
          options.compilerArgs << '-Xlint:unchecked' << '-Xlint:deprecation' << '-g' << '-parameters'
+@@ -150,10 +142,6 @@ implementation fileTree(dir: "$rootProject.projectDir/libs", include: ['*.jar'])
+ // You can skip tests by specifying '-x test' in your gradle task arguments.
+ tasks.register('test') {
+     dependsOn(subprojects.test)
+-    doLast {
+-        if (subprojects.test.stream().anyMatch(Task::getDidWork))
+-            buildJacocoAggregate.execute()
+-    }
+ }
+
+ tasks.register('build') {

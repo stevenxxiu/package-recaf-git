@@ -1,7 +1,7 @@
 # Maintainer: dreamscache.d <dreamscache.d@gmail.com>
 _pkgname=recaf
 pkgname=${_pkgname}-git
-pkgver=r5178.5e784710f
+pkgver=r5199.8531fb767
 pkgrel=1
 pkgdesc="A modern Java bytecode editor"
 arch=("any")
@@ -31,8 +31,6 @@ prepare() {
   cd "$srcdir/$_pkgname"
 
   patch --forward --strip=1 --input="${startdir}/gradle.patch"
-  patch --forward --strip=1 --input="${startdir}/gradle-wrapper.patch"
-  patch --forward --strip=1 --input="${startdir}/gradle-allow-test-fail.patch"
 
   patch --forward --strip=1 --input="${startdir}/light-theme-recaf.patch"
   patch --forward --strip=1 --input="${startdir}/light-theme-syntax-highlighting.patch"
